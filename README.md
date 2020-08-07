@@ -132,7 +132,7 @@ Gamemakin LLC is not a lawyer, but please don't introduce illegal actions and be
 
 <a name="anc"></a>
 <a name="1"></a>
-## 1. Asset Naming Conventions ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+## 1. Asset Naming Conventions
 
 Naming conventions should be treated as law. A project that conforms to a naming convention is able to have its assets managed, searched, parsed, and maintained with incredible ease.
 
@@ -140,7 +140,7 @@ Most things are prefixed with prefixes being generally an acronym of the asset t
 
 <a name="base-asset-name"></a>
 <a name="1.1"></a>
-### 1.1 Base Asset Name - `Prefix_BaseAssetName_Variant_Suffix` ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+### 1.1 Base Asset Name - `Prefix_BaseAssetName_Variant_Suffix`
 
 All assets should have a _Base Asset Name_. A Base Asset Name represents a logical grouping of related assets. Any asset that is part of this logical group should follow the standard of  `Prefix_BaseAssetName_Variant_Suffix`.
 
@@ -169,7 +169,7 @@ Depending on how your asset variants are made, you can chain together variant na
 | Texture (Normal)        | T_Bob_N                                                    |
 | Texture (Evil Diffuse)  | T_Bob_Evil_D                                               |
 
-##### 1.1e2 Rocks
+##### 1.1e2 Rock
 
 | Asset Type              | Asset Name                                                 |
 | ----------------------- | ---------------------------------------------------------- |
@@ -181,7 +181,7 @@ Depending on how your asset variants are made, you can chain together variant na
 
 <a name="asset-name-modifiers"></a>
 <a name="1.2"></a>
-### 1.2 Asset Name Modifiers ![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 1.2 Asset Name Modifiers
 
 When naming an asset use these tables to determine the prefix and suffix to use with an asset's [Base Asset Name](#base-asset-name).
 
@@ -211,212 +211,251 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 
 > 1.2.12 [Effects](#anc-effects)
 
+> 1.2.13 [Editor Utility](#anc-editor-utility)
+
+> 1.2.14 [Engine](#anc-engine)
+
 <a name="anc-common"></a>
 <a name="1.2.1"></a>
-#### 1.2.1 Most Common ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 1.2.1 Most Common
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| Level / Map             |            |            | [Should be in a folder called Maps.](#2.4) |
-| Level (Persistent)      |            | _P         |                                  |
-| Level (Audio)           |            | _Audio     |                                  |
-| Level (Lighting)        |            | _Lighting  |                                  |
-| Level (Geometry)        |            | _Geo       |                                  |
-| Level (Gameplay)        |            | _Gameplay  |                                  |
-| Blueprint               | BP_        |            |                                  |
-| Material                | M_         |            |                                  |
-| Static Mesh             | S_         |            | Many use SM_. We use S_.         |
-| Skeletal Mesh           | SK_        |            |                                  |
-| Texture                 | T_         | _?         | See [Textures](#anc-textures)    |
-| Particle System         | PS_        |            |                                  |
-| Widget Blueprint        | WBP_       |            |                                  |
+| Asset Type              | Prefix     | Suffix     | Notes                                     |
+| ----------------------- | ---------- | ---------- | --------------------------------          |
+| Level / Map             |            |            | [Should be in a folder called Maps](#2.4) |
+| Level (Persistent)      |            | _P         |                                           |
+| Level (Audio)           |            | _Audio     |                                           |
+| Level (Lighting)        |            | _Lighting  |                                           |
+| Level (Geometry)        |            | _Geo       |                                           |
+| Level (Gameplay)        |            | _Gameplay  |                                           |
+| Blueprint               | B_         |            | Many use BP_ -- we use B_                 |
+| Material                | M_         |            |                                           |
+| Material Instance       | MI_        |            |                                           |
+| Pawn (or Character)     | P_         |            | Characters are Pawns                      |
+| Static Mesh             | S_         |            | Many use SM_ -- we use S_                 |
+| Skeletal Mesh           | SK_        |            |                                           |
+| Texture                 | T_         | _?         | See [Textures](#anc-textures)             |
+| Widget Blueprint        | W_         |            | Many use WBP_ -- we use W_                |
 
 <a name="anc-animations"></a>
 <a name="1.2.2"></a>
-#### 1.2.2 Animations ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 1.2.2 Animations
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| Aim Offset              | AO_        |            |                                  |
-| Aim Offset 1D           | AO_        |            |                                  |
-| Animation Blueprint     | ABP_       |            |                                  |
-| Animation Composite     | AC_        |            |                                  |
-| Animation Montage       | AM_        |            |                                  |
-| Animation Sequence      | A_         |            |                                  |
-| Blend Space             | BS_        |            |                                  |
-| Blend Space 1D          | BS_        |            |                                  |
-| Level Sequence          | LS_        |            |                                  |
-| Morph Target            | MT_        |            |                                  |
-| Paper Flipbook          | PFB_       |            |                                  |
-| Rig                     | Rig_       |            |                                  |
-| Skeletal Mesh           | SK_        |            |                                  |
-| Skeleton                | SKEL_      |            |                                  |
+| Asset Type              | Prefix     | Suffix     | Notes                                            |
+| ----------------------- | ---------- | ---------- | --------------------------------                 |
+| Aim Offset              | AO_        |            |                                                  |
+| Aim Offset 1D           | AO_        |            |                                                  |
+| Animation Blueprint     | AB_        |            | Many use ABP_ -- we use AB_                      |
+| Animation Composite     | AC_        |            |                                                  |
+| Animation Montage       | AM_        |            |                                                  |
+| Animation Sequence      | A_         |            |                                                  |
+| Blend Space             | BS_        |            |                                                  |
+| Blend Space 1D          | BS_        |            |                                                  |
+| Level Sequence          | LS_        |            |                                                  |
+| Morph Target            | MT_        |            |                                                  |
+| Paper Flipbook          | PFB_       |            |                                                  |
+| Rig (retargeting data)  | Rig_       |            | Use Rig_Source_To_Target i.e. Rig_SkelA_To_SkelB |
+| Skeletal Mesh           | SK_        |            |                                                  |
+| Skeleton                | Skel_      |            |                                                  |
 
 <a name="anc-ai"></a>
 <a name="1.2.3"></a>
-### 1.2.3 Artificial Intelligence ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 1.2.3 Artificial Intelligence
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| AI Controller           | AIC_       |            |                                  |
-| Behavior Tree           | BT_        |            |                                  |
-| Blackboard              | BB_        |            |                                  |
-| Decorator               | BTDecorator_ |          |                                  |
-| Service                 | BTService_ |            |                                  |
-| Task                    | BTTask_    |            |                                  |
-| Environment Query       | EQS_       |            |                                  |
-| EnvQueryContext         | EQS_       | Context    |                                  |
+| Asset Type                | Prefix     | Suffix     | Notes                                            |
+| -----------------------   | ---------- | ---------- | --------------------------------                 |
+| AI Controller             | AI_        |            | Many use AIC_ -- we use AI_                      |
+| Behavior Tree             | BT_        |            |                                                  |
+| Blackboard                | BB_        |            |                                                  |
+| Decorator                 | BTDec_     |            | Many use BTDecorator_ -- we feel that's too long |
+| Service                   | BTSer_     |            | Many use BTService_ -- we feel that's too long   |
+| Task                      | BTTask_    |            |                                                  |
+| Environment Query         | EQS_       |            |                                                  |
+| Environment Query Context | EQS_       | Context    |                                                  |
 
 <a name="anc-bp"></a>
 <a name="1.2.4"></a>
-### 1.2.4 Blueprints ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 1.2.4 Blueprints
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| Blueprint               | BP_        |            |                                  |
-| Blueprint Component	  | BP_	       | Component  | I.e. BP_InventoryComponent       |
-| Blueprint Function Library | BPFL_   |            |                                  |
-| Blueprint Interface     | BPI_       |            |                                  |
-| Blueprint Macro Library | BPML_      |            | Do not use macro libraries if possible. |
-| Enumeration             | E          |            | No underscore.                   |
-| Structure               | F or S     |            | No underscore.                   |
-| Tutorial Blueprint      | TBP_       |            |                                  |
-| Widget Blueprint        | WBP_       |            |                                  |
+| Asset Type                  | Prefix     | Suffix     | Notes                            |
+| -----------------------     | ---------- | ---------- | -------------------------------- |
+| Blueprint                   | B_         |            | Many use BP_ -- we use B_        |
+| Blueprint Component         | B_         | Component  | i.e. B_InventoryComponent        |
+| Blueprint Function Library  | BFL_       |            | Many use BPFL_ -- we use BFL_    |
+| Blueprint Interface         | BI_        |            | Many use BPI_ -- we use BI_      |
+| ~~Blueprint Macro Library~~ | ~~BML_~~   |            | Do **NOT** use macro libraries   |
+| Enumeration (enum)          | E          |            | No underscore                    |
+| Structure (struct)          | F          |            | No underscore                    |
+| Pawn (or Character)         | P_         |            | Characters are Pawns             |
+| Widget Blueprint            | W_         |            | Many use WBP_ -- we use W_       |
 
 <a name="anc-materials"></a>
 <a name="1.2.5"></a>
-### 1.2.5 Materials ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 1.2.5 Materials
 
-| Asset Type                    | Prefix     | Suffix     | Notes                            |
-| ----------------------------- | ---------- | ---------- | -------------------------------- |
-| Material                      | M_         |            |                                  |
-| Material (Post Process)       | PP_        |            |                                  |
-| Material Function             | MF_        |            |                                  |
-| Material Instance             | MI_        |            |                                  |
-| Material Parameter Collection | MPC_       |            |                                  |
-| Subsurface Profile            | SP_        |            |                                  |
-| Physical Materials            | PM_        |            |                                  |
-| Decal                         | M_, MI_    | _Decal     |                                  |
+| Asset Type                       | Prefix     | Suffix     | Notes                            |
+| -----------------------------    | ---------- | ---------- | -------------------------------- |
+| Material                         | M_         |            |                                  |
+| Material (Post Process)          | PP_        |            |                                  |
+| Material Function                | MF_        |            |                                  |
+| Material Instance                | MI_        |            |                                  |
+| Material Instance (Post Process) | PPI_       |            |                                  |
+| Material Parameter Collection    | MPC_       |            |                                  |
+| Subsurface Profile               | SSP_       |            |                                  |
+| Physical Materials               | PM_        |            |                                  |
+| Decal                            | M_, MI_    | _Decal     |                                  |
 
 <a name="anc-textures"></a>
 <a name="1.2.6"></a>
-### 1.2.6 Textures ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 1.2.6 Textures
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| Texture                 | T_         |            |                                  |
-| Texture (Diffuse/Albedo/Base Color)| T_ | _D      |                                  |
-| Texture (Normal)        | T_         | _N         |                                  |
-| Texture (Roughness)     | T_         | _R         |                                  |
-| Texture (Alpha/Opacity) | T_         | _A         |                                  |
-| Texture (Ambient Occlusion) | T_     | _O         |                                  |
-| Texture (Bump)          | T_         | _B         |                                  |
-| Texture (Emissive)      | T_         | _E         |                                  |
-| Texture (Mask)          | T_         | _M         |                                  |
-| Texture (Specular)      | T_         | _S         |                                  |
-| Texture (Metallic)      | T_         | _M         |                                  |
-| Texture (Packed)        | T_         | _*         | See notes below about [packing](#anc-textures-packing). |
-| Texture Cube            | TC_        |            |                                  |
-| Media Texture           | MT_        |            |                                  |
-| Render Target           | RT_        |            |                                  |
-| Cube Render Target      | RTC_       |            |                                  |
-| Texture Light Profile   | TLP        |            |                                  |
+| Asset Type                          | Prefix     | Suffix     | Notes                                                  |
+| -----------------------             | ---------- | ---------- | --------------------------------                       |
+| Texture                             | T_         |            |                                                        |
+| Texture (Diffuse/Albedo/Base Color) | T_         | _D         |                                                        |
+| Texture (Normal)                    | T_         | _N         |                                                        |
+| Texture (Roughness)                 | T_         | _R         |                                                        |
+| Texture (Alpha/Opacity)             | T_         | _A         |                                                        |
+| Texture (Ambient Occlusion)         | T_         | _O         |                                                        |
+| Texture (Bump)                      | T_         | _B         | Prefer normal maps unless there's a compelling reason  |
+| Texture (Emissive)                  | T_         | _E         |                                                        |
+| Texture (Mask)                      | T_         | _Mask      |                                                        |
+| Texture (Specular)                  | T_         | _S         |                                                        |
+| Texture (Metallic)                  | T_         | _M         |                                                        |
+| Texture (Packed)                    | T_         | _*         | See notes below about [packing](#anc-textures-packing) |
+| Texture Cube                        | TC_        |            |                                                        |
+| Media Texture                       | MT_        |            |                                                        |
+| Render Target                       | RT_        |            |                                                        |
+| Cube Render Target                  | RTC_       |            |                                                        |
+| Texture Light Profile               | TLP        |            | No underscore                                          |
 
 <a name="anc-textures-packing"></a>
 <a name="1.2.6.1"></a>
-#### 1.2.6.1 Texture Packing ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+##### 1.2.6.1 Texture Packing
 It is common practice to pack multiple layers of texture data into one texture. An example of this is packing Emissive, Roughness, Ambient Occlusion together as the Red, Green, and Blue channels of a texture respectively. To determine the suffix, simply stack the given suffix letters from above together, e.g. `_ERO`.
 
-> It is generally acceptable to include an Alpha/Opacity layer in your Diffuse/Albedo's alpha channel and as this is common practice, adding `A` to the `_D` suffix is optional.
+> It is very common to include an Alpha/Opacity layer in your Diffuse/Albedo's alpha channel. As such, `A` should **not** be added to the `_D` suffix.
 
-Packing 4 channels of data into a texture (RGBA) is not recommended except for an Alpha/Opacity mask in the Diffuse/Albedo's alpha channel as a texture with an alpha channel incurs more overhead than one without.
+Packing 4 channels of data into a texture (RGBA) is not recommended except for an Alpha/Opacity mask in the Diffuse/Albedo's alpha channel, as a texture with an alpha channel incurs more overhead than one without.
 
 <a name="anc-misc"></a>
 <a name="1.2.7"></a>
-### 1.2.7 Miscellaneous ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 1.2.7 Miscellaneous
 
-| Asset Type                 | Prefix     | Suffix     | Notes                            |
-| -------------------------- | ---------- | ---------- | -------------------------------- |
-| Animated Vector Field      | VFA_       |            |                                  |
-| Camera Anim                | CA_        |            |                                  |
-| Color Curve                | Curve_     | _Color     |                                  |
-| Curve Table                | Curve_     | _Table     |                                  |
-| Data Asset                 | *_         |            | Prefix should be based on class. |
-| Data Table                 | DT_        |            |                                  |
-| Float Curve                | Curve_     | _Float     |                                  |
-| Foliage Type               | FT_        |            |                                  |
-| Force Feedback Effect      | FFE_       |            |                                  |
-| Landscape Grass Type       | LG_        |            |                                  |
-| Landscape Layer            | LL_        |            |                                  |
-| Matinee Data               | Matinee_   |            |                                  |
-| Media Player               | MP_        |            |                                  |
-| Object Library             | OL_        |            |                                  |
-| Redirector                 |            |            | These should be fixed up ASAP.   |
-| Sprite Sheet               | SS_        |            |                                  |
-| Static Vector Field        | VF_        |            |                                  |
-| Substance Graph Instance   | SGI_       |            |                                  |
-| Substance Instance Factory | SIF_       |            |                                  |
-| Touch Interface Setup      | TI_        |            |                                  |
-| Vector Curve               | Curve_     | _Vector    |                                  |
+| Asset Type                    | Prefix       | Suffix     | Notes                                                         |
+| --------------------------    | ----------   | ---------- | --------------------------------                              |
+| Animated Vector Field         | VFA_         |            |                                                               |
+| Camera Anim                   | CA_          |            |                                                               |
+| Color Curve                   | Curve_       | _Color     |                                                               |
+| Curve Table                   | Curve_       | _Table     |                                                               |
+| Data Asset (class definition) | D            |            | No underscore, favour short names where reasonable e.g. DItem |
+| Data Asset                    | D*_          |            | Prefix based on class name e.g. DItem_Potion, DItem_Ruby      |
+| Data Table                    | DT_          |            |                                                               |
+| Float Curve                   | Curve_       | _Float     |                                                               |
+| Foliage Type                  | FT_          |            |                                                               |
+| Force Feedback Effect         | FFE_         |            |                                                               |
+| Landscape Grass Type          | LG_          |            |                                                               |
+| Landscape Layer               | LL_          |            |                                                               |
+| ~~Matinee Data~~              | ~~Matinee_~~ |            | Do **not** use Matinee, use Sequencer instead                 |
+| Media Player                  | MP_          |            |                                                               |
+| Object Library                | OL_          |            |                                                               |
+| Redirector                    |              |            | These should be fixed up ASAP                                 |
+| Sprite Sheet                  | SS_          |            |                                                               |
+| Static Vector Field           | VF_          |            |                                                               |
+| Substance Graph Instance      | SGI_         |            |                                                               |
+| Substance Instance Factory    | SIF_         |            |                                                               |
+| Touch Interface Setup         | TI_          |            |                                                               |
+| Vector Curve                  | Curve_       | _Vector    |                                                               |
 
 <a name="anc-paper2d"></a>
 <a name="1.2.8"></a>
-### 1.2.8 Paper 2D ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 1.2.8 Paper 2D
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Paper Flipbook          | PFB_       |            |                                  |
-| Sprite                  | SPR_       |            |                                  |
-| Sprite Atlas Group      | SPRG_      |            |                                  |
+| Sprite                  | SP_        |            |                                  |
+| Sprite Atlas Group      | SPG_       |            |                                  |
 | Tile Map                | TM_        |            |                                  |
 | Tile Set                | TS_        |            |                                  |
 
 <a name="anc-physics"></a>
 <a name="1.2.9"></a>
-### 1.2.9 Physics ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 1.2.9 Physics
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Physical Material       | PM_        |            |                                  |
-| Physical Asset	  | PHYS_      |            |                                  |
+| Physical Asset          | Phys_      |            |                                  |
 | Destructible Mesh       | DM_        |            |                                  |
 
 <a name="anc-sounds"></a>
 <a name="1.2.10"></a>
-### 1.2.10 Sounds ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 1.2.10 Sounds
 
-| Asset Type              | Prefix     | Suffix     | Notes                            |
-| ----------------------- | ---------- | ---------- | -------------------------------- |
-| Dialogue Voice          | DV_        |            |                                  |
-| Dialogue Wave           | DW_        |            |                                  |
-| Media Sound Wave        | MSW_       |            |                                  |
-| Reverb Effect           | Reverb_    |            |                                  |
-| Sound Attenuation       | ATT_       |            |                                  |
-| Sound Class             |            |            | No prefix/suffix. Should be put in a folder called SoundClasses |
-| Sound Concurrency       |            | _SC        | Should be named after a SoundClass |
-| Sound Cue               | A_         | _Cue       |                                  |
-| Sound Mix               | Mix_       |            |                                  |
-| Sound Wave              | A_         |            |                                  |
+| Asset Type              | Prefix     | Suffix     | Notes                                                           |
+| ----------------------- | ---------- | ---------- | --------------------------------                                |
+| Dialogue Voice          | DV_        |            |                                                                 |
+| Dialogue Wave           | DW_        |            |                                                                 |
+| Media Sound Wave        | MSW_       |            |                                                                 |
+| Reverb Effect           | Reverb_    |            |                                                                 |
+| Sound Attenuation       | Att_       |            |                                                                 |
+| Sound Class             |            |            | No prefix/suffix, should be put in a folder called SoundClasses |
+| Sound Concurrency       |            | _SC        | Should be named after a SoundClass                              |
+| Sound Cue               | SD_        | _Cue       |                                                                 |
+| Sound Mix               | Mix_       |            |                                                                 |
+| Sound Wave              | SD_        |            |                                                                 |
 
 <a name="anc-ui"></a>
 <a name="1.2.11"></a>
-### 1.2.11 User Interface ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 1.2.11 User Interface
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Font                    | Font_      |            |                                  |
+| Font Face               | F_         |            |                                  |
 | Slate Brush             | Brush_     |            |                                  |
 | Slate Widget Style      | Style_     |            |                                  |
-| Widget Blueprint        | WBP_       |            |                                  |
+| Widget Blueprint        | W_         |            | Many use WBP_ -- we use W_       |
 
 <a name="anc-effects"></a>
 <a name="1.2.12"></a>
-### 1.2.12 Effects ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 1.2.12 Effects
+
+| Asset Type                            | Prefix     | Suffix     | Notes                                       |
+| -----------------------               | ---------- | ---------- | --------------------------------            |
+| ~Particle System~                     | ~PS_~      |            | Do **not** use Cascade, use Niagara instead |
+| Material (Post Process)               | PP_        |            |                                             |
+| Material Instance (Post Process)      | PPI_       |            |                                             |
+| Niagara Dynamic Input                 | NDI_       |            |                                             |
+| Niagara Emitter                       | NE_        |            |                                             |
+| Niagara Function                      | NF_        |            |                                             |
+| Niagara Module                        | NM_        |            |                                             |
+| Niagara Parameter Collection          | NPC_       |            |                                             |
+| Niagara Parameter Collection Instance | NPCI_      |            |                                             |
+| Niagara System                        | NS_        |            |                                             |
+
+<a name="anc-engine-utility"></a>
+<a name="1.2.13"></a>
+#### 1.2.13 Editor Utility
+
+**All** editor-only assets should live under the top-level folder: [{ProjectName}Editor](#structure-editor-folder).
+
+| Asset Type              | Prefix     | Suffix     | Notes                                          |
+| ----------------------- | ---------- | ---------- | --------------------------------               |
+| Editor Widget Blueprint | EW_        |            | Should be somewhere in a folder called Utility |
+| Tutorial Blueprint      | TB_        |            | Should be in a folder called Tutorial          |
+
+<a name="anc-engine"></a>
+<a name="1.2.14"></a>
+#### 1.2.14 Engine
+
+These will likely be uncommon and often defined in code. However, should blueprint versions of these assets be created, these are the conventions to use.
 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
-| Particle System         | PS_        |            |                                  |
-| Material (Post Process) | PP_        |            |                                  |
+| Game Instance           | GI_        |            |                                  |
+| Game State              | GState_    |            |                                  |
+| Player State            | PState_    |            |                                  |
 
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -483,9 +522,12 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
             |   |-- DesertEagle
             |   |-- RocketPistol
             |-- Rifles
+    |-- <a href="#2.10">GenericShooterEditor</a>
+        |-- Tutorial
+        |-- Utility
 </pre>
 
-The reasons for this structure are listed in the following sub-sections.
+The reasons for this structure are detailed in the following sub-sections.
 
 ### Sections
 
@@ -499,33 +541,37 @@ The reasons for this structure are listed in the following sub-sections.
 
 > 2.5 [Core](#structure-core)
 
-> 2.6 [`Assets` and `AssetTypes`](#structure-assettypes)
+> 2.6 [`Assets` and `AssetTypes`](#structure-asset-types)
 
 > 2.7 [Large Sets](#structure-large-sets)
 
 > 2.8 [Material Library](#structure-material-library)
 
+> 2.9 [No Empty Folders](#structure-no-empty-folders)]
+
+> 2.10 [Editor Folder](#structure-editor-folder)
+
 
 <a name="2.1"></a>
 <a name="structure-folder-names"><a>
-### 2.1 Folder Names ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+### 2.1 Folder Names
 
 These are common rules for naming any folder in the content structure.
 
 <a name="2.1.1"></a>
-#### 2.1.1 Always Use PascalCase[<sup>*</sup>](#terms-cases) ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 2.1.1 Always Use PascalCase[<sup>*</sup>](#terms-cases)
 
 PascalCase refers to starting a name with a capital letter and then instead of using spaces, every following word also starts with a capital letter. For example, `DesertEagle`, `RocketPistol`, and `ASeriesOfWords`.
 
 See [Cases](#terms-cases).
 
 <a name="2.1.2"></a>
-#### 2.1.2 Never Use Spaces ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 2.1.2 Never Use Spaces
 
 Re-enforcing [2.1.1](#2.1.1), never use spaces. Spaces can cause various engineering tools and batch processes to fail. Ideally, your project's root also contains no spaces and is located somewhere such as `D:\Project` instead of `C:\Users\My Name\My Documents\Unreal Projects`.
 
 <a name="2.1.3"></a>
-#### 2.1.3 Never Use Unicode Characters And Other Symbols ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 2.1.3 Never Use Unicode Characters And Other Symbols
 
 If one of your game characters is named 'Zoë', its folder name should be `Zoe`. Unicode characters can be worse than [Spaces](#2.1.2) for engineering tool and some parts of UE4 don't support Unicode characters in paths either.
 
@@ -535,7 +581,7 @@ Using other characters outside `a-z`, `A-Z`, and `0-9` such as `@`, `-`, `_`, `,
 
 <a name="2.2"></a>
 <a name="structure-top-level"><a>
-### 2.2 Use A Top Level Folder For Project Specific Assets ![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 2.2 Use A Top Level Folder For Project Specific Assets
 
 All of a project's assets should exist in a folder named after the project. For example, if your project is named 'Generic Shooter', _all_ of it's content should exist in `Content/GenericShooter`.
 
@@ -589,7 +635,7 @@ If your project plans to release DLC or has multiple sub-projects associated wit
 
 <a name="2.3"></a>
 <a name="structure-developers"></a>
-### 2.3 Use Developers Folder For Local Testing ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 2.3 Use Developers Folder For Local Testing
 
 During a project's development, it is very common for team members to have a sort of 'sandbox' where they can experiment freely without risking the core project. Because this work may be ongoing, these team members may wish to put their assets on a project's source control server. Not all teams require use of Developer folders, but ones that do use them often run into a common problem with assets submitted to source control.
 
@@ -601,7 +647,7 @@ Once the assets are ready for use, an artist simply has to move the assets into 
 
 <a name="2.4"></a>
 <a name="structure-maps"></a>
-### 2.4 All Map[<sup>*</sup>](#terms-level-map) Files Belong In A Folder Called Maps ![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 2.4 All Map[<sup>*</sup>](#terms-level-map) Files Belong In A Folder Called Maps
 
 Map files are incredibly special and it is common for every project to have its own map naming system, especially if they work with sub-levels or streaming levels. No matter what system of map organization is in place for the specific project, all levels should belong in `/Content/Project/Maps`.
 
@@ -611,7 +657,7 @@ This also simplifies the job of cooking for engineers. Wrangling levels for a bu
 
 <a name="2.5"></a>
 <a name="structure-core"></a>
-### 2.5 Use A `Core` Folder For Critical Blueprints And Other Assets ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 2.5 Use A `Core` Folder For Critical Blueprints And Other Assets
 
 Use `/Content/Project/Core` folder for assets that are absolutely fundamental to a project's workings. For example, base `GameMode`, `Character`, `PlayerController`, `GameState`, `PlayerState`, and related Blueprints should live here.
 
@@ -620,16 +666,16 @@ This creates a very clear "don't touch these" message for other team members. No
 For example, if your project requires pickups that can be placed in a level, there should exist a base Pickup class in `Core/Pickups` that defines base behavior for a pickup. Specific pickups such as a Health or Ammo should exist in a folder such as `/Content/Project/Placeables/Pickups/`. Game designers can define and tweak pickups in this folder however they please, but they should not touch `Core/Pickups` as they may unintentionally break pickups project-wide.
 
 <a name="2.6"></a>
-<a name="structure-assettypes"></a>
-### 2.6 Do Not Create Folders Called `Assets` or `AssetTypes` ![#](https://img.shields.io/badge/lint-supported-green.svg)
+<a name="structure-asset-types"></a>
+### 2.6 Do Not Create Folders Called `Assets` or `AssetTypes`
 
 <a name="2.6.1"></a>
-#### 2.6.1 Creating a folder named `Assets` is redundant. ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 2.6.1 Creating a folder named `Assets` is redundant.
 
 All assets are assets.
 
 <a name="2.6.2"></a>
-#### 2.6.2 Creating a folder named `Meshes`, `Textures`, or `Materials` is redundant. ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 2.6.2 Creating a folder named `Meshes`, `Textures`, or `Materials` is redundant.
 
 All asset names are named with their asset type in mind. These folders offer only redundant information and the use of these folders can easily be replaced with the robust and easy to use filtering system the Content Browser provides.
 
@@ -641,7 +687,7 @@ Not doing this also prevents the inevitability of someone putting a static mesh 
 
 <a name="2.7"></a>
 <a name="structure-large-sets"></a>
-### 2.7 Very Large Asset Sets Get Their Own Folder Layout ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 2.7 Very Large Asset Sets Get Their Own Folder Layout
 
 This can be seen as a pseudo-exception to [2.6](#2.6).
 
@@ -653,7 +699,7 @@ For example, animations that are shared across multiple characters should lay in
 
 <a name="2.8"></a>
 <a name="structure-material-library"></a>
-### 2.8 `MaterialLibrary` ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 2.8 `MaterialLibrary`
 
 If your project makes use of master materials, layered materials, or any form of reusable materials or textures that do not belong to any subset of assets, these assets should be located in `Content/Project/MaterialLibrary`.
 
@@ -667,7 +713,7 @@ Any testing or debug materials should be within `MaterialLibrary/Debug`. This al
 
 <a name="2.9"></a>
 <a name="structure-no-empty-folders"></a>
-### 2.9 No Empty Folders ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 2.9 No Empty Folders
 
 There simply shouldn't be any empty folders. They clutter the content browser.
 
@@ -680,6 +726,16 @@ If you find that the content browser has an empty folder you can't delete, you s
 1. Open the editor. Confirm everything still works as expected. If it doesn't, revert, figure out what went wrong, and try again.
 1. Ensure the folder is now gone.
 1. Submit changes to source control.
+
+<a name="2.10"></a>
+<a name="structure-editor-folder"></a>
+### 2.10 Editor Folder
+
+As with the top-level project folder in which all project assets should exist, there should be a top-level folder specifically for editor-only assets that aren't to be included in the packaged project.
+
+All of a project's editor-specific assets should exist in a folder named after the project, suffixed with `Editor`. For example, if your project is named 'Generic Shooter', _all_ of its editor content should exist in `Content/GenericShooterEditor`.
+
+This makes it much easier to see where editor-specific assets live and make sure they're not being included in the packaged project. Some example assets that could live in this folder would be Tutorial Blueprints (in a sub-folder called `Tutorial`) and Editor Widget Blueprints (somewhere in a sub-folder called `Utility`).
 
 **[⬆ Back to Top](#table-of-contents)**
 
