@@ -341,30 +341,30 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 <a name="1.2.7"></a>
 #### 1.2.7 Miscellaneous
 
-| Asset Type                    | Prefix       | Suffix     | Notes                                                         |
-| --------------------------    | ----------   | ---------- | --------------------------------                              |
-| Animated Vector Field         | VFA_         |            |                                                               |
-| Camera Anim                   | CA_          |            |                                                               |
-| Color Curve                   | Curve_       | _Color     |                                                               |
-| Curve Table                   | Curve_       | _Table     |                                                               |
-| Data Asset (class definition) | D            |            | No underscore, favour short names where reasonable e.g. DItem |
-| Data Asset                    | D*_          |            | Prefix based on class name e.g. DItem_Potion, DItem_Ruby      |
-| Data Table                    | DT_          |            |                                                               |
-| Float Curve                   | Curve_       | _Float     |                                                               |
-| Foliage Type                  | FT_          |            |                                                               |
-| Force Feedback Effect         | FFE_         |            |                                                               |
-| Landscape Grass Type          | LG_          |            |                                                               |
-| Landscape Layer               | LL_          |            |                                                               |
-| ~~Matinee Data~~              | ~~Matinee_~~ |            | Do **not** use Matinee, use Sequencer instead                 |
-| Media Player                  | MP_          |            |                                                               |
-| Object Library                | OL_          |            |                                                               |
-| Redirector                    |              |            | These should be fixed up ASAP                                 |
-| Sprite Sheet                  | SS_          |            |                                                               |
-| Static Vector Field           | VF_          |            |                                                               |
-| Substance Graph Instance      | SGI_         |            |                                                               |
-| Substance Instance Factory    | SIF_         |            |                                                               |
-| Touch Interface Setup         | TI_          |            |                                                               |
-| Vector Curve                  | Curve_       | _Vector    |                                                               |
+| Asset Type                    | Prefix       | Suffix     | Notes                                                    |
+| --------------------------    | ----------   | ---------- | --------------------------------                         |
+| Animated Vector Field         | VFA_         |            |                                                          |
+| Camera Anim                   | CA_          |            |                                                          |
+| Color Curve                   | Curve_       | _Color     |                                                          |
+| Curve Table                   | Curve_       | _Table     |                                                          |
+| Data Asset (class definition) | D            |            | No underscore, favour shorter names e.g. DItem           |
+| Data Asset                    | D*_          |            | Prefix based on class name e.g. DItem_Potion, DItem_Ruby |
+| Data Table                    | DT_          |            |                                                          |
+| Float Curve                   | Curve_       | _Float     |                                                          |
+| Foliage Type                  | FT_          |            |                                                          |
+| Force Feedback Effect         | FFE_         |            |                                                          |
+| Landscape Grass Type          | LG_          |            |                                                          |
+| Landscape Layer               | LL_          |            |                                                          |
+| ~~Matinee Data~~              | ~~Matinee_~~ |            | Do **not** use Matinee, use Sequencer instead            |
+| Media Player                  | MP_          |            |                                                          |
+| Object Library                | OL_          |            |                                                          |
+| Redirector                    |              |            | These should be fixed up ASAP                            |
+| Sprite Sheet                  | SS_          |            |                                                          |
+| Static Vector Field           | VF_          |            |                                                          |
+| Substance Graph Instance      | SGI_         |            |                                                          |
+| Substance Instance Factory    | SIF_         |            |                                                          |
+| Touch Interface Setup         | TI_          |            |                                                          |
+| Vector Curve                  | Curve_       | _Vector    |                                                          |
 
 <a name="anc-paper2d"></a>
 <a name="1.2.8"></a>
