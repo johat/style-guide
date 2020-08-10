@@ -30,7 +30,7 @@ For example, if you want to send someone to the first principle of this style gu
 >
 > B. [Acknowledgements and Further Links](#acknowledgements-links)
 
-### [License](#license)
+### Style Guide [License](#license)
 
 <a name="0"></a>
 <a name="principles"></a>
