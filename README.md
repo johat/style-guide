@@ -1,134 +1,58 @@
-# [Gamemakin](https://gamemak.in) UE4 Style Guide() {
+# Cupboard Games UE4 Style Guide() {
 
 *A mostly reasonable approach to Unreal Engine 4*
 
-Heavily inspired by the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript).
+Forked from the original [UE4 style guide](https://github.com/Allar/style-guide) (owned by [Gamemakin LLC](https://gamemak.in)), which itself was heavily inspired by the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript). This version is modified for purpose by Cupboard Games.
 
-[![Analytics](https://ga-beacon.appspot.com/UA-80567399-1/repo?useReferrer)](#) ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+This is our **general purpose** style guide. Please check the **[branches](https://github.com/johat/style-guide/branches/all)** in case there's a version relevant to the project you're working on. [Project-specific branches](https://github.com/johat/style-guide/branches/all) may have project-specific changes to this document.
 
-## Unreal Engine 4 Linter Plugin
+#### Linking To This Document
 
-An automated method of checking your project against this style guide is available for purchase at [the Unreal Engine marketplace](https://www.unrealengine.com/marketplace/linter). This plugin's source code will eventually be free, but in order to use with UE4 without building the engine from source code, please use the marketplace version.
-
-## Linter and Style Guide Documentation
-
-More technical documentation regarding Linter and the Style Guide can be found at our [ReadTheDocs](https://ue4-style-guide.readthedocs.io/en/latest/) page.
-
-## Discuss This Style Guide
-
-Gamemakin LLC has a public Discord channel at http://discord.gamemak.in with a #linter channel if you'd like to discuss all things style guide and Linter plugin.
-
-## Linking To This Document
-
-Every section of this style guide is numbered for both easy reference and easy linking. You can link to any section directly by simply append a hash tag and the section number to the end of http://ue4.style
-For example, if you want to send someone to the first principle of this style guide you would append `#0.1`, resulting in http://ue4.style#0.1.
-
-## Forks And Translations
-
-If you have made a notable fork or translation that is not suitable for a pull request into this repo, please submit a pull request to add the fork or translation here.
-
-* [Korean Translation](https://github.com/ymkim50/ue4-style-guide/blob/master/README_Kor.md) by ymkim50
-* [Russian Translation](https://github.com/CosmoMyzrailGorynych/ue4-style-guide-rus/blob/master/README.md) by CosmoMyzrailGorynych
-* [Japanese Translation](https://github.com/akenatsu/ue4-style-guide/blob/master/README.jp.md) by akenatsu
-* [Chinese Translation](https://github.com/skylens-inc/ue4-style-guide/blob/master/README.md) by Beijing Skylens Tech.
-
-## Important Terminology
-
-<a name="terms-level-map"></a>
-##### Levels/Maps
-
-The word 'map' generally refers to what the average person calls a 'level' and may be used interchangeably. See this term's history [here](https://en.wikipedia.org/wiki/Level_(video_gaming)).
-
-<a name="terms-cases"></a>
-##### Cases
-
-There are a few different ways you can name things. Here are some common casing types:
-
-> ###### PascalCase
->
-> Capitalize every word and remove all spaces, e.g. `DesertEagle`, `StyleGuide`, `ASeriesOfWords`.
-> 
-> ###### camelCase
->
-> The first letter is always lowercase but every following word starts with uppercase, e.g. `desertEagle`, `styleGuide`, `aSeriesOfWords`.
->
-> ###### Snake_case
->
-> Words can arbitrarily start upper or lowercase but words are separated by an underscore, e.g. `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
-
-<a name="terms-var-prop"></a>
-##### Variables / Properties
-
-The words 'variable' and 'property' in most contexts are interchangable. If they are both used together in the same context however:
-
-<a name="terms-property"></a>
-###### Property 
-Usually refers to a variable defined in a class. For example, if `B_Barrel` had a variable `bExploded`, `bExploded` may be referred to as a property of `B_Barrel`. 
-
-When in the context of a class, often used to imply accessing previously defined data.
-
-<a name="terms-variable"></a>
-###### Variable 
-Usually refers to a variable defined as a function argument or a local variable inside a function.
-
-When in the context of a class, often used to convey discussion about its definition and what it will hold.
-
-<a name="0"></a>
-## 0. Principles
-
-These principles have been adapted from [idomatic.js style guide](https://github.com/rwaldron/idiomatic.js/).
-
-<a name="0.1"></a>
-### 0.1 If your UE4 project already has a style guide, you should follow it.
-
-If you are working on a project or with a team that has a pre-existing style guide, it should be respected.  Any inconsistency between an existing style guide and this guide should defer to the existing.
-
-Style guides should be living documents however and you should propose style guide changes to an existing style guide as well as this guide if you feel the change benefits all usages.
-
-> #### "Arguments over style are pointless. There should be a style guide, and you should follow it."
-> [_Rebecca Murphey_](https://rmurphey.com)
-
-<a name="0.2"></a>
-### 0.2 All structure, assets, and code in any Unreal Engine 4 project should look like a single person created it, no matter how many people contributed.
-
-Moving from one project to another should not cause a re-learning of style and structure. Conforming to a style guide removes unneeded guesswork and ambiguities.
-
-It also allows for more productive creation and maintenance as one does not need to think about style, simply follow instructions. This style guide is written with best practices in mind, meaning that by following this style guide you will also minimize hard to track issues.
-
-<a name="0.3"></a>
-### 0.3 Friends do not let friends have bad style.
-
-If you see someone working either against a style guide or no style guide, try to correct them.
-
-When working within a team or discussing within a community such as [Unreal Slackers](http://join.unrealslackers.org/), it is far easier to help and to ask for help when people are consistent. Nobody likes to help untangle someone's Blueprint spaghetti or deal with assets with names they can't understand.
-
-If you are helping someone who's work conforms to a different but consistent and sane style guide, you should be able to adapt to it. If they do not conform to any style guide, please direct them here.
-
-<a name="0.4"></a>
-### 0.4 A team without a style guide is no team of mine.
-
-When joining an Unreal Engine 4 team one of your first questions should be "Do you have a style guide?". If the answer is no, you should be skeptical about their ability to work as a team.
-
-<a name="0.5"></a>
-### 0.5 Don't Break The Law
-
-Gamemakin LLC is not a lawyer, but please don't introduce illegal actions and behavior to a project, including but not limited to:
-
-* Don't distribute content you don't have the rights to distribute
-* Don't infringe on someone else's copyrighted or trademark material
-* Don't steal content
-* Follow licensing restrictions on content, e.g. attribute when attributions are needed
+Every section of this style guide is numbered for both easy reference and easy linking. You can link to any section directly by simply append a hash tag and the section number to the end of the url.
+For example, if you want to send someone to the first principle of this style guide you would append `#0.1`.
 
 <a name="toc"></a>
 ## Table of Contents
 
-> 1. [Asset Naming Conventions](#anc)
+> 1. [Principles](#principles)
+> 1. [Asset Naming Conventions](#anc) including 1.2 [Asset Name Modifiers](#asset-name-modifiers)
 > 1. [Directory Structure](#structure)
 > 1. [Blueprints](#bp)
 > 1. [Static Meshes](#s)
 > 1. [Particle Systems](#ps)
 > 1. [Levels / Maps](#levels)
 > 1. [Textures](#textures)
+
+### Appendices
+
+> A. [Important Terminology](#terms)
+> A. [Acknowledgements and Further Links](#acknowledgements-links)
+
+> [License](#license)
+
+<a name="0"></a>
+<a name="principles"></a>
+## 0. Principles
+
+
+<a name="0.1"></a>
+### 0.1 All structure, assets, and code in any Unreal Engine 4 project should look like a single person created it, no matter how many people contributed.
+
+**Always follow this style guide.** It will keep the project feeling consistent and remove any guesswork or ambiguity.
+
+However, style guides are also living documents, so do propose changes if you feel the change would benefit all usages.
+
+<a name="0.2"></a>
+### 0.5 Don't Break The Law
+
+We are not lawyers, but please don't introduce illegal actions and behavior to a project, including but not limited to:
+
+* Don't distribute content you don't have the rights to distribute
+* Don't infringe on someone else's copyrighted or trademark material
+* Don't steal content
+* Follow licensing restrictions on content, e.g. attribute when attributions are needed
+
+**[⬆ Back to Top](#table-of-contents)**
 
 <a name="anc"></a>
 <a name="1"></a>
@@ -251,7 +175,7 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Blend Space             | BS_        |            |                                                  |
 | Blend Space 1D          | BS_        |            |                                                  |
 | Level Sequence          | LS_        |            |                                                  |
-| Morph Target            | MT_        |            |                                                  |
+| Morph Target            | Morph_     |            |                                                  |
 | Paper Flipbook          | PFB_       |            |                                                  |
 | Rig (retargeting data)  | Rig_       |            | Use Rig_Source_To_Target i.e. Rig_SkelA_To_SkelB |
 | Skeletal Mesh           | SK_        |            |                                                  |
@@ -326,7 +250,7 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Media Texture                       | MT_        |            |                                                        |
 | Render Target                       | RT_        |            |                                                        |
 | Cube Render Target                  | RTC_       |            |                                                        |
-| Texture Light Profile               | TLP        |            | No underscore                                          |
+| Texture Light Profile               | TLP_       |            |                                                        |
 
 <a name="anc-textures-packing"></a>
 <a name="1.2.6.1"></a>
@@ -1068,13 +992,13 @@ Bad examples:
 
 <a name="3.3.1.2"></a>
 <a name="bp-funcs-naming-onrep"></a>
-#### 3.3.1.2 Property RepNotify Functions Always `OnRep_Variable` ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.3.1.2 Property RepNotify Functions Always `OnRep_Variable`
 
 All functions for replicated with notification variables should have the form `OnRep_Variable`. This is forced by the Blueprint editor. If you are writing a C++ `OnRep` function however, it should also follow this convention when exposing it to Blueprints.
 
 <a name="3.3.1.3"></a>
 <a name="bp-funcs-naming-bool"></a>
-#### 3.3.1.3 Info Functions Returning Bool Should Ask Questions ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.3.1.3 Info Functions Returning Bool Should Ask Questions
 
 When writing a function that does not change the state of or modify any object and is purely for getting information, state, or computing a yes/no value, it should ask a question. This should also follow [the verb rule](#bp-funcs-naming-verbs).
 
@@ -1101,7 +1025,7 @@ Bad examples:
 
 <a name="3.3.1.4"></a>
 <a name="bp-funcs-naming-eventhandlers"></a>
-#### 3.3.1.4 Event Handlers and Dispatchers Should Start With `On` ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.3.1.4 Event Handlers and Dispatchers Should Start With `On`
 
 Any function that handles an event or dispatches an event should start with `On` and continue to follow [the verb rule](#bp-funcs-naming-verbs). The verb may move to the end however if past-tense reads better.
 
@@ -1128,7 +1052,7 @@ Bad examples:
 
 <a name="3.3.1.5"></a>
 <a name="bp-funcs-naming-rpcs"></a>
-#### 3.3.1.5 Remote Procedure Calls Should Be Prefixed With Target ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.3.1.5 Remote Procedure Calls Should Be Prefixed With Target
 
 Any time an RPC is created, it should be prefixed with either `Server`, `Client`, or `Multicast`. No exceptions.
 
@@ -1150,7 +1074,7 @@ Bad examples:
 
 <a name="3.3.2"></a>
 <a name="bp-funcs-return"></a>
-#### 3.3.2 All Functions Must Have Return Nodes ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 3.3.2 All Functions Must Have Return Nodes
 
 All functions must have return nodes, no exceptions.
 
@@ -1162,7 +1086,7 @@ In situations like where a programmer may add a pin to a Sequence node or add lo
 
 <a name="3.3.3"></a>
 <a name="bp-graphs-funcs-node-limit"></a>
-#### 3.3.3 No Function Should Have More Than 50 Nodes ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 3.3.3 No Function Should Have More Than 50 Nodes
 
 Simply, no function should have more than 50 nodes. Any function this big should be broken down into smaller functions for readability and ease of maintenance.
 
@@ -1178,7 +1102,7 @@ The following nodes are not counted as they are deemed to not increase function 
 
 <a name="3.3.4"></a>
 <a name="bp-graphs-funcs-description"></a>
-#### 3.3.4 All Public Functions Should Have A Description ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 3.3.4 All Public Functions Should Have A Description
 
 This rule applies more to public facing or marketplace blueprints, so that others can more easily navigate and consume your blueprint API.
 
@@ -1186,7 +1110,7 @@ Simply, any function that has an access specificer of Public should have its des
 
 <a name="3.3.5"></a>
 <a name="bp-graphs-funcs-plugin-category"></a>
-#### 3.3.5 All Custom Static Plugin `BlueprintCallable` Functions Must Be Categorized By Plugin Name ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.3.5 All Custom Static Plugin `BlueprintCallable` Functions Must Be Categorized By Plugin Name
 
 If your project includes a plugin that defines `static` `BlueprintCallable` functions, they should have their category set to the plugin's name or a subset category of the plugin's name.
 
@@ -1194,19 +1118,19 @@ For example, `Zed Camera Interface` or `Zed Camera Interface | Image Capturing`.
 
 <a name="3.4"></a>
 <a name="bp-graphs"></a>
-### 3.4 Blueprint Graphs ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 3.4 Blueprint Graphs
 
 This section covers things that apply to all Blueprint graphs.
 
 <a name="3.4.1"></a>
 <a name="bp-graphs-spaghetti"></a>
-#### 3.4.1 No Spaghetti ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.4.1 No Spaghetti
 
 Wires should have clear beginnings and ends. You should never have to mentally untangle wires to make sense of a graph. Many of the following sections are dedicated to reducing spaghetti.
 
 <a name="3.4.2"></a>
 <a name="bp-graphs-align-wires"></a>
-#### 3.4.2 Align Wires Not Nodes ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.4.2 Align Wires Not Nodes
 
 Always align wires, not nodes. You can't always control the size and pin location on a node, but you can always control the location of a node and thus control the wires. Straight wires provide clear linear flow. Wiggly wires wear wits wickedly. You can straighten wires by using the Straighten Connections command with BP nodes selected. Hotkey: Q
 
@@ -1221,19 +1145,19 @@ Acceptable Example: Certain nodes might not cooperate no matter how you use the 
 
 <a name="3.4.3"></a>
 <a name="bp-graphs-exec-first-class"></a>
-#### 3.4.3 White Exec Lines Are Top Priority ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.4.3 White Exec Lines Are Top Priority
 
 If you ever have to decide between straightening a linear white exec line or straightening data lines of some kind, always straighten the white exec line.
 
 <a name="3.4.4"></a>
 <a name="bp-graphs-block-comments"></a>
-#### 3.4.4 Graphs Should Be Reasonably Commented ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.4.4 Graphs Should Be Reasonably Commented
 
 Blocks of nodes should be wrapped in comments that describe their higher-level behavior. While every function should be well named so that each individual node is easily readable and understandable, groups of nodes contributing to a purpose should have their purpose described in a comment block. If a function does not have many blocks of nodes and its clear that the nodes are serving a direct purpose in the function's goal, then they do not need to be commented as the function name and  description should suffice.
 
 <a name="3.4.5"></a>
 <a name="bp-graphs-cast-error-handling"></a>
-#### 3.4.5 Graphs Should Handle Casting Errors Where Appropriate ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.4.5 Graphs Should Handle Casting Errors Where Appropriate
 
 If a function or event assumes that a cast always succeeds, it should appropriately report a failure in logic if the cast fails. This lets others know why something that is 'supposed to work' doesn't. A function should also attempt a graceful recover after a failed cast if it's known that the reference being casted could ever fail to be casted.
 
@@ -1241,7 +1165,7 @@ This does not mean every cast node should have its failure handled. In many case
 
 <a name="3.4.6"></a>
 <a name="bp-graphs-dangling-nodes"></a>
-#### 3.4.6 Graphs Should Not Have Any Dangling / Loose / Dead Nodes ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.4.6 Graphs Should Not Have Any Dangling / Loose / Dead Nodes
 
 All nodes in all blueprint graphs must have a purpose. You should not leave dangling blueprint nodes around that have no purpose or are not executed.
 
@@ -1251,7 +1175,7 @@ All nodes in all blueprint graphs must have a purpose. You should not leave dang
 <a name="4"></a>
 <a name="Static Meshes"></a>
 <a name="s"></a>
-## 4. Static Meshes ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+## 4. Static Meshes
 
 This section will focus on Static Mesh assets and their internals.
 
@@ -1269,31 +1193,31 @@ This section will focus on Static Mesh assets and their internals.
 
 <a name="4.1"></a>
 <a name="s-uvs"></a>
-### 4.1 Static Mesh UVs ![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 4.1 Static Mesh UVs
 
 If Linter is reporting bad UVs and you can't seem to track it down, open the resulting `.log` file in your project's `Saved/Logs` folder for exact details as to why it's failing. I am hoping to include these messages in the Lint report in the future.
 
 <a name="4.1.1"></a>
 <a name="s-uvs-no-missing"></a>
-#### 4.1.1 All Meshes Must Have UVs ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 4.1.1 All Meshes Must Have UVs
 
 Pretty simple. All meshes, regardless how they are to be used, should not be missing UVs.
 
 <a name="4.1.2"></a>
 <a name="s-uvs-no-overlapping"></a>
-#### 4.1.2 All Meshes Must Not Have Overlapping UVs for Lightmaps ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 4.1.2 All Meshes Must Not Have Overlapping UVs for Lightmaps
 
 Pretty simple. All meshes, regardless how they are to be used, should have valid non-overlapping UVs.
 
 <a name="4.2"></a>
 <a name="s-lods"></a>
-### 4.2 LODs Should Be Set Up Correctly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 4.2 LODs Should Be Set Up Correctly
 
 This is a subjective check on a per-project basis, but as a general rule any mesh that can be seen at varying distances should have proper LODs.
 
 <a name="4.3"></a>
 <a name="s-modular-snapping"></a>
-### 4.3 Modular Socketless Assets Should Snap To The Grid Cleanly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 4.3 Modular Socketless Assets Should Snap To The Grid Cleanly
 
 This is a subjective check on a per-asset basis, however any modular socketless assets should snap together cleanly based on the project's grid settings.
 
@@ -1301,13 +1225,13 @@ It is up to the project whether to snap based on a power of 2 grid or on a base 
 
 <a name="4.4"></a>
 <a name="s-collision"></a>
-### 4.4 All Meshes Must Have Collision ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 4.4 All Meshes Must Have Collision
 
 Regardless of whether an asset is going to be used for collision in a level, all meshes should have proper collision defined. This helps the engine with things such as bounds calculations, occlusion, and lighting. Collision should also be well-formed to the asset.
 
 <a name="4.5"></a>
 <a name="s-scaled"></a>
-### 4.5 All Meshes Should Be Scaled Correctly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 4.5 All Meshes Should Be Scaled Correctly
 
 This is a subjective check on a per-project basis, however all assets should be scaled correctly to their project. Level designers or blueprint authors should not have to tweak the scale of meshes to get them to confirm in the editor. Scaling meshes in the engine should be treated as a scale override, not a scale correction.
 
@@ -1317,7 +1241,7 @@ This is a subjective check on a per-project basis, however all assets should be 
 <a name="5"></a>
 <a name="Particle Systems"></a>
 <a name="ps"></a>
-## 5. Particle Systems ![#](https://img.shields.io/badge/lint-supported-green.svg)
+## 5. Particle Systems
 
 This section will focus on Particle System assets and their internals.
 
@@ -1327,7 +1251,7 @@ This section will focus on Particle System assets and their internals.
 
 <a name="5.1"></a>
 <a name="ps-emitter-naming"></a>
-### 5.1 Emitter Naming ![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 5.1 Emitter Naming
 
 All emitters in a Particle System should be named something descriptive and not left to their default name "Particle Emitter".
 
@@ -1337,7 +1261,7 @@ All emitters in a Particle System should be named something descriptive and not 
 <a name="6"></a>
 <a name="Levels"></a>
 <a name="levels"></a>
-## 6. Levels / Maps ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+## 6. Levels / Maps
 
 [See Terminology Note](#terms-level-map) regarding "levels" vs "maps".
 
@@ -1355,7 +1279,7 @@ This section will focus on Level assets and their internals.
 
 <a name="6.1"></a>
 <a name="levels-no-errors-or-warnings"></a>
-### 6.1 No Errors Or Warnings ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+### 6.1 No Errors Or Warnings
 
 All levels should load with zero errors or warnings. If a level loads with any errors or warnings, they should be fixed immediately to prevent cascading issues.
 
@@ -1365,25 +1289,25 @@ Please note: Linter is even more strict on this than the editor is currently, an
 
 <a name="6.2"></a>
 <a name="levels-lighting-should-be-built"></a>
-### 6.2 Lighting Should Be Built ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 6.2 Lighting Should Be Built
 
 It is normal during development for levels to occasionally not have lighting built. When doing a test/internal/shipping build or any build that is to be distributed however, lighting should always be built.
 
 <a name="6.3"></a>
 <a name="levels-no-visible-z-fighting"></a>
-### 6.3 No Player Visible Z Fighting ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 6.3 No Player Visible Z Fighting
 
 Levels should not have any [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) in all areas visible to the player. 
 
 <a name="6.4"></a>
 <a name="levels-mp-rules"></a>
-### 6.4 Marketplace Specific Rules ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 6.4 Marketplace Specific Rules
 
 If a project is to be sold on the UE4 Marketplace, it must follow these rules.
 
 <a name="6.4.1"></a>
 <a name="levels-mp-rules-overview"></a>
-### 6.4.1 Overview Level ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 6.4.1 Overview Level
 
 If your project contains assets that should be visualized or demoed, you must have a map within your project that contains the name "Overview".
 
@@ -1393,7 +1317,7 @@ For example, `InteractionComponent_Overview`.
 
 <a name="6.4.2"></a>
 <a name="levels-mp-rules-demo"></a>
-### 6.4.2 Demo Level ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 6.4.2 Demo Level
 
 If your project contains assets that should be demoed or come with some sort of tutorial, you must have a map within your project that contains the name "Demo". This level should also contain documentation within it in some form that illustrates how to use your project. See Epic's Content Examples project for good examples on how to do this.
 
@@ -1406,7 +1330,7 @@ For example, `InteractionComponent_Overview_Demo`, `ExplosionKit_Demo`.
 
 <a name="7"></a>
 <a name="textures"></a>
-## 7. Textures ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+## 7. Textures
 
 This section will focus on Texture assets and their internals.
 
@@ -1422,7 +1346,7 @@ This section will focus on Texture assets and their internals.
 
 <a name="7.1"></a>
 <a name="textures-dimensions"></a>
-### 7.1 Dimensions Are Powers of 2 ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 7.1 Dimensions Are Powers of 2
 
 All textures, except for UI textures, must have its dimensions in multiples of powers of 2. Textures do not have to be square.
 
@@ -1430,7 +1354,7 @@ For example, `128x512`, `1024x1024`, `2048x1024`, `1024x2048`, `1x512`.
 
 <a name="7.2"></a>
 <a name="textures-density"></a>
-### 7.2 Texture Density Should Be Uniform ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 7.2 Texture Density Should Be Uniform
 
 All textures should be of a size appropriate for their standard use case. Appropriate texture density varies from project to project, but all textures within that project should have a consistent density.
 
@@ -1438,37 +1362,157 @@ For example, if a project's texture density is 8 pixel per 1 unit, a texture tha
 
 <a name="7.3"></a>
 <a name="textures-max-size"></a>
-### 7.3 Textures Should Be No Bigger than 8192 ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 7.3 Textures Should Be No Bigger than 8192
 
 No texture should have a dimension that exceeds 8192 in size, unless you have a very explicit reason to do so. Often, using a texture this big is simply just a waste of resources.
 
 <a name="7.4"></a>
 <a name="textures-group"></a>
-### 7.4 Textures Should Be Grouped Correctly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 7.4 Textures Should Be Grouped Correctly
 
 Every texture has a Texture Group property used for LODing, and this should be set correctly based on its use. For example, all UI textures should belong in the UI texture group.
 
 **[⬆ Back to Top](#table-of-contents)**
 
+## Appendices
 
-## Contributors
+<a name="a"></a>
+<a name="terms"></a>
+## A. Important Terminology
 
-* [Michael Allar](http://allarsblog.com): [GitHub](https://github.com/Allar), [Twitter](https://twitter.com/michaelallar)
+### Sections
+
+> A.1 [Levels/Maps](#terms-level-map)
+
+> A.2 [Cases](#terms-cases)
+
+> A.3 [Variables/Properties](#terms-var-prop)
+
+<a name="a.1"></a>
+<a name="terms-level-map"></a>
+### A.1 Levels/Maps
+
+The word 'map' generally refers to what the average person calls a 'level' and may be used interchangeably. See this term's history [here](https://en.wikipedia.org/wiki/Level_(video_gaming)).
+
+**[⬆ Back to Top](#table-of-contents)**
+
+<a name="a.2"></a>
+<a name="terms-cases"></a>
+### A.2 Cases
+
+There are a few different ways you can name things. Here are some common casing types:
+
+> ###### PascalCase
+>
+> Capitalize every word and remove all spaces, e.g. `DesertEagle`, `StyleGuide`, `ASeriesOfWords`.
+> 
+> ###### camelCase
+>
+> The first letter is always lowercase but every following word starts with uppercase, e.g. `desertEagle`, `styleGuide`, `aSeriesOfWords`.
+>
+> ###### Snake_case
+>
+> Words can arbitrarily start upper or lowercase but words are separated by an underscore, e.g. `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
+
+In almost all cases throughout this style guide, PascalCase should be used. If in doubt, it's probably PascalCase! The main exceptions are variables/properties, which use camelCase.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+<a name="a.3"></a>
+<a name="terms-var-prop"></a>
+### A.3 Variables/Properties
+
+The words 'variable' and 'property' in most contexts are interchangable. If they are both used together in the same context however:
+
+<a name="a.3.1"></a>
+<a name="terms-property"></a>
+#### A.3.1 Property 
+Usually refers to a variable defined in a class. For example, if `B_Barrel` had a variable `bExploded`, `bExploded` may be referred to as a property of `B_Barrel`. 
+
+When in the context of a class, often used to imply accessing previously defined data.
+
+<a name="a.3.2"></a>
+<a name="terms-variable"></a>
+#### A.3.2 Variable 
+Usually refers to a variable defined as a function argument or a local variable inside a function.
+
+When in the context of a class, often used to convey discussion about its definition and what it will hold.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+<a name="b"></a>
+<a name="acknowledgements-links"></a>
+## B. Acknowledgements and Further Links
+
+### Sections
+
+> B.1 [Disclaimer](#disclaimer)
+
+> B.2 [Contributors](#contributors)
+
+> B.3 [Translations](#translations)
+
+> B.4 [Unreal Engine 4 Linter Plugin](#linter-plugin)
+
+> B.5 [Discuss This Style Guide](#discuss)
+
+<a name="b.1"></a>
+<a name="disclaimer"></a>
+### B.1 Disclaimer
+
+This version of the style guide has been modified for purpose by Cupboard Games. Therefore, we take full responsibility for the content present in the guide found [here](https://github.com/johat/style-guide). Please direct any issues with the content of _this_ fork of the style guide towards us by opening an issue. The contributors to the original style guide are not responsible for the modifications we have made to the document.
+
+The [license](#license) of this document remains as that of the original.
+
+<a name="b.2"></a>
+<a name="contributors"></a>
+### B.1 Contributors
+
+Contributors to the original [style guide](https://github.com/Allar/ue4-style-guide), which this document is a modification of:
+
+* [Michael Allar](https://allarsblog.com): [GitHub](https://github.com/Allar), [Twitter](https://twitter.com/michaelallar)
 * [CosmoMyzrailGorynych](https://github.com/CosmoMyzrailGorynych)
 * [billymcguffin](https://github.com/billymcguffin)
 * [akenatsu](https://github.com/akenatsu)
 
+The [principles](#principles) of this style guide are modified from those found in the original [style guide](https://github.com/Allar/ue4-style-guide), which were themselves adapted from the [idomatic.js style guide](https://github.com/rwaldron/idiomatic.js/) principles.
+
+<a name="b.3"></a>
+<a name="translations"></a>
+#### B.3 Translations
+
+Translations of the original [style guide](https://github.com/Allar/ue4-style-guide):
+
+* [Korean Translation](https://github.com/ymkim50/ue4-style-guide/blob/master/README_Kor.md) by ymkim50
+* [Russian Translation](https://github.com/CosmoMyzrailGorynych/ue4-style-guide-rus/blob/master/README.md) by CosmoMyzrailGorynych
+* [Japanese Translation](https://github.com/akenatsu/ue4-style-guide/blob/master/README.jp.md) by akenatsu
+* [Chinese Translation](https://github.com/skylens-inc/ue4-style-guide/blob/master/README.md) by Beijing Skylens Tech.
+
+<a name="b.4"></a>
+<a name="linter-plugin"></a>
+### B.4 Unreal Engine 4 Linter Plugin
+
+An automated method of checking your project against the style guide created by [Gamemakin LLC](https://gamemak.in) is available from the [Unreal Engine marketplace](https://www.unrealengine.com/marketplace/en-US/product/linter-v2).
+
+More technical information regarding the linter plugin and style guide can be found at the [ReadTheDocs](https://ue4-style-guide.readthedocs.io/en/latest/) page.
+
+<a name="b.4"></a>
+<a name="discuss"></a>
+### B.5 Discuss This Style Guide
+
+A style guide is a living document, so we're open to discussion and suggestions for improvement. Please open an issue here to discuss in such case.
+
+However, if you're not working with us specifically on a project, it may be better to suggestion changes against the [original style guide](https://github.com/Allar.//ue4-style-guide) instead. Contributing to the original style guide in this way would better benefit the wider UE4 community. Gamemakin LLC also has a public Discord server (linked in the original style guide) specifically for discussion of the style guide and the linter plugin.
+
+**[⬆ Back to Top](#table-of-contents)**
+
+<a name="license"></a>
 ## License
 
-Copyright (c) 2016 Gamemakin LLC
+[Original style guide](https://github.com/Allar/ue4-style-guide) copyright (c) 2016 [Gamemakin LLC](https://gamemak.in)
 
 See [LICENSE](/LICENSE)
 
 **[⬆ Back to Top](#table-of-contents)**
-
-
-## Amendments
-
-We encourage you to fork this guide and change the rules to fit your team's style guide. Below, you may list some amendments to the style guide. This allows you to periodically update your style guide without having to deal with merge conflicts.
 
 # };
