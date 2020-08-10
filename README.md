@@ -2,9 +2,10 @@
 
 *A mostly reasonable approach to Unreal Engine 4*
 
-Forked from the original [UE4 style guide](https://github.com/Allar/style-guide) (owned by [Gamemakin LLC](https://gamemak.in)), which itself was heavily inspired by the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript). This version is modified for purpose by Cupboard Games.
+Forked from the original [UE4 style guide](https://github.com/Allar/ue4-style-guide) by [Gamemakin LLC](https://gamemak.in), which itself was heavily inspired by the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript). This version is modified for purpose by Cupboard Games.
 
-This is our **general purpose** style guide. Please check the **[branches](https://github.com/johat/style-guide/branches/all)** in case there's a version relevant to the project you're working on. [Project-specific branches](https://github.com/johat/style-guide/branches/all) may have project-specific changes to this document.
+#### This Style Guide
+> This is our **general purpose** style guide. Please check the **[branches](https://github.com/johat/style-guide/branches/all)** in case there's a version relevant to the project you're working on. [Project-specific branches](https://github.com/johat/style-guide/branches/all) may have project-specific changes to this document.
 
 #### Linking To This Document
 
@@ -14,7 +15,7 @@ For example, if you want to send someone to the first principle of this style gu
 <a name="toc"></a>
 ## Table of Contents
 
-> 1. [Principles](#principles)
+> 0. [Principles](#principles)
 > 1. [Asset Naming Conventions](#anc) including 1.2 [Asset Name Modifiers](#asset-name-modifiers)
 > 1. [Directory Structure](#structure)
 > 1. [Blueprints](#bp)
@@ -28,8 +29,8 @@ For example, if you want to send someone to the first principle of this style gu
 > A. [Important Terminology](#terms)
 >
 > B. [Acknowledgements and Further Links](#acknowledgements-links)
->
-> **[LICENSE](#license)**
+
+### [License](#license)
 
 <a name="0"></a>
 <a name="principles"></a>
@@ -44,7 +45,7 @@ For example, if you want to send someone to the first principle of this style gu
 However, style guides are also living documents, so do propose changes if you feel the change would benefit all usages.
 
 <a name="0.2"></a>
-### 0.5 Don't Break The Law
+### 0.2 Don't Break The Law
 
 We are not lawyers, but please don't introduce illegal actions and behavior to a project, including but not limited to:
 
@@ -1503,7 +1504,7 @@ More technical information regarding the linter plugin and style guide can be fo
 
 A style guide is a living document, so we're open to discussion and suggestions for improvement. Please open an issue here to discuss in such case.
 
-However, if you're not working with us specifically on a project, it may be better to suggestion changes against the [original style guide](https://github.com/Allar.//ue4-style-guide) instead. Contributing to the original style guide in this way would better benefit the wider UE4 community. Gamemakin LLC also has a public Discord server (linked in the original style guide) specifically for discussion of the style guide and the linter plugin.
+However, if you're not working with us specifically on a project, it may be better to suggestion changes against the [original style guide](https://github.com/Allar/ue4-style-guide) instead. Contributing to the original style guide in this way would better benefit the wider UE4 community. Gamemakin LLC also has a public Discord server (linked in the original style guide) specifically for discussion of the style guide and the linter plugin.
 
 **[⬆ Back to Top](#table-of-contents)**
 
