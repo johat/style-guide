@@ -26,9 +26,10 @@ For example, if you want to send someone to the first principle of this style gu
 ### Appendices
 
 > A. [Important Terminology](#terms)
-> A. [Acknowledgements and Further Links](#acknowledgements-links)
-
-> [License](#license)
+>
+> B. [Acknowledgements and Further Links](#acknowledgements-links)
+>
+> **[LICENSE](#license)**
 
 <a name="0"></a>
 <a name="principles"></a>
@@ -1479,7 +1480,7 @@ The [principles](#principles) of this style guide are modified from those found 
 
 <a name="b.3"></a>
 <a name="translations"></a>
-#### B.3 Translations
+### B.3 Translations
 
 Translations of the original [style guide](https://github.com/Allar/ue4-style-guide):
 
