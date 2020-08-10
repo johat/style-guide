@@ -63,7 +63,7 @@ The words 'variable' and 'property' in most contexts are interchangable. If they
 
 <a name="terms-property"></a>
 ###### Property 
-Usually refers to a variable defined in a class. For example, if `BP_Barrel` had a variable `bExploded`, `bExploded` may be referred to as a property of `BP_Barrel`. 
+Usually refers to a variable defined in a class. For example, if `B_Barrel` had a variable `bExploded`, `bExploded` may be referred to as a property of `B_Barrel`. 
 
 When in the context of a class, often used to imply accessing previously defined data.
 
@@ -462,7 +462,7 @@ These will likely be uncommon and often defined in code. However, should bluepri
 
 <a name="2"></a>
 <a name="structure"></a>
-## 2. Content Directory Structure ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+## 2. Content Directory Structure
 
 Equally important as asset names, the directory structure style of a project should be considered law. Asset naming conventions and content directory structure go hand in hand, and a violation of either causes unneeded chaos.
 
@@ -474,7 +474,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 ### 2e1 Example Project Content Structure
 <pre>
 |-- Content
-    |-- <a href="#2.2">GenericShooter</a>
+    |-- <a href="#2.2">MyGame</a>
         |-- Art
         |   |-- Industrial
         |   |   |-- Ambient
@@ -522,7 +522,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
             |   |-- DesertEagle
             |   |-- RocketPistol
             |-- Rifles
-    |-- <a href="#2.10">GenericShooterEditor</a>
+    |-- <a href="#2.10">MyGameEditor</a>
         |-- Tutorial
         |-- Utility
 </pre>
@@ -583,7 +583,7 @@ Using other characters outside `a-z`, `A-Z`, and `0-9` such as `@`, `-`, `_`, `,
 <a name="structure-top-level"><a>
 ### 2.2 Use A Top Level Folder For Project Specific Assets
 
-All of a project's assets should exist in a folder named after the project. For example, if your project is named 'Generic Shooter', _all_ of it's content should exist in `Content/GenericShooter`.
+All of a project's assets should exist in a folder named after the project. For example, if your project is named 'My Game', _all_ of it's content should exist in `Content/MyGame`.
 
 > The `Developers` folder is not for assets that your project relies on and therefore is not project specific. See [Developer Folders](#2.3) for details about this.
 
@@ -733,7 +733,7 @@ If you find that the content browser has an empty folder you can't delete, you s
 
 As with the top-level project folder in which all project assets should exist, there should be a top-level folder specifically for editor-only assets that aren't to be included in the packaged project.
 
-All of a project's editor-specific assets should exist in a folder named after the project, suffixed with `Editor`. For example, if your project is named 'Generic Shooter', _all_ of its editor content should exist in `Content/GenericShooterEditor`.
+All of a project's editor-specific assets should exist in a folder named after the project, suffixed with `Editor`. For example, if your project is named 'My Game', _all_ of its editor content should exist in `Content/MyGameEditor`.
 
 This makes it much easier to see where editor-specific assets live and make sure they're not being included in the packaged project. Some example assets that could live in this folder would be Tutorial Blueprints (in a sub-folder called `Tutorial`) and Editor Widget Blueprints (somewhere in a sub-folder called `Utility`).
 
@@ -742,7 +742,7 @@ This makes it much easier to see where editor-specific assets live and make sure
 
 <a name="3"></a>
 <a name="bp"></a>
-## 3. Blueprints ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+## 3. Blueprints
 
 This section will focus on Blueprint classes and their internals. When possible, style rules conform to [Epic's Coding Standard](https://docs.unrealengine.com/latest/INT/Programming/Development/CodingStandard).
 
@@ -760,7 +760,7 @@ Remember: Blueprinting badly bears blunders, beware! (Phrase by [KorkuVeren](htt
 
 <a name="3.1"></a>
 <a name="bp-compiling"></a>
-### 3.1 Compiling ![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 3.1 Compiling
 
 All blueprints should compile with zero warnings and zero errors. You should fix blueprint warnings and errors immediately as they can quickly cascade into very scary unexpected behavior.
 
@@ -770,7 +770,7 @@ Broken blueprints can cause problems that manifest in other ways, such as broken
 
 <a name="3.2"></a>
 <a name="bp-vars"></a>
-### 3.2 Variables ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+### 3.2 Variables
 
 The words `variable` and `property` may be used interchangeably.
 
@@ -792,17 +792,17 @@ The words `variable` and `property` may be used interchangeably.
 
 <a name="3.2.1"></a>
 <a name="bp-var-naming"></a>
-#### 3.2.1 Naming ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+#### 3.2.1 Naming
 
 <a name="3.2.1.1"></a>
 <a name="bp-var-naming-nouns"></a>
-##### 3.2.1.1 Nouns ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+##### 3.2.1.1 Nouns
 
 All non-boolean variable names must be clear, unambiguous, and descriptive nouns.
 
 <a name="3.2.1.2"></a>
 <a name="bp-var-naming-case"></a>
-##### 3.2.1.2 PascalCase ![#](https://img.shields.io/badge/lint-supported-green.svg)
+##### 3.2.1.2 PascalCase
 
 All non-boolean variables should be in the form of [PascalCase](#terms-cases).
 
@@ -818,7 +818,7 @@ All non-boolean variables should be in the form of [PascalCase](#terms-cases).
 
 <a name="3.2.1.3"></a>
 <a name="bp-var-bool-prefix"></a>
-##### 3.2.1.3 Boolean `b` Prefix ![#](https://img.shields.io/badge/lint-supported-green.svg)
+##### 3.2.1.3 Boolean `b` Prefix
 
 All booleans should be named in PascalCase but prefixed with a lowercase `b`.
 
@@ -828,10 +828,10 @@ UE4 Blueprint editors know not to include the `b` in user-friendly displays of t
 
 <a name="3.2.1.4"></a>
 <a name="bp-var-bool-names"></a>
-##### 3.2.1.4 Boolean Names ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+##### 3.2.1.4 Boolean Names
 
 <a name="3.2.1.4.1"></a>
-###### 3.2.1.4.1 General And Independent State Information ![#](https://img.shields.io/badge/lint-supported-green.svg)
+###### 3.2.1.4.1 General And Independent State Information
 
 All booleans should be named as descriptive adjectives when possible if representing general information. Do not include words that phrase the variable as a question, such as `Is`. This is reserved for functions.
 
@@ -840,7 +840,7 @@ Example: Use `bDead` and `bHostile` **not** `bIsDead` and `bIsHostile`.
 Try to not use verbs such as `bRunning`. Verbs tend to lead to complex states.
 
 <a name="3.2.1.4.2"></a>
-###### 3.2.1.4.2 Complex States ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+###### 3.2.1.4.2 Complex States
 
 Do not to use booleans to represent complex and/or dependent states. This makes state adding and removing complex and no longer easily readable. Use an enumeration instead.
 
@@ -850,14 +850,14 @@ Example: Do **not** use `bRunning` if you also need `bWalking` or `bSprinting`. 
 
 <a name="3.2.1.5"></a>
 <a name="bp-vars-naming-context"></a>
-##### 3.2.1.5 Considered Context ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+##### 3.2.1.5 Considered Context
 
 All variable names must not be redundant with their context as all variable references in Blueprint will always have context.
 
 <a name="3.2.1.5e"></a>
 ###### 3.2.1.5e Examples:
 
-Consider a Blueprint called `BP_PlayerCharacter`.
+Consider a Blueprint called `P_PlayerCharacter`.
 
 **Bad**
 
@@ -868,7 +868,7 @@ Consider a Blueprint called `BP_PlayerCharacter`.
 * `CharacterSkills`
 * `ChosenCharacterSkin`
 
-All of these variables are named redundantly. It is implied that the variable is representative of the `BP_PlayerCharacter` it belongs to because it is `BP_PlayerCharacter` that is defining these variables.
+All of these variables are named redundantly. It is implied that the variable is representative of the `P_PlayerCharacter` it belongs to because it is `P_PlayerCharacter` that is defining these variables.
 
 **Good**
 
@@ -881,7 +881,7 @@ All of these variables are named redundantly. It is implied that the variable is
 
 <a name="3.2.1.6"></a>
 <a name="bp-vars-naming-atomic"></a>
-##### 3.2.1.6 Do _Not_ Include Atomic Type Names ![#](https://img.shields.io/badge/lint-supported-green.svg)
+##### 3.2.1.6 Do _Not_ Include Atomic Type Names
 
 Atomic or primitive variables are variables that represent data in their simplest form, such as booleans, integers, floats, and enumerations.
 
@@ -901,7 +901,7 @@ Example: A fence generator needs to generate X number of posts. Store X in `NumP
 
 <a name="3.2.1.7"></a>
 <a name="bp-vars-naming-complex"></a>
-##### 3.2.1.7 Do Include Non-Atomic Type Names ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+##### 3.2.1.7 Do Include Non-Atomic Type Names
 
 Non-atomic or complex variables are variables that represent data as a collection of atomic variables. Structs, Classes, Interfaces, and primitives with hidden behavior such as `Text` and `Name` all qualify under this rule.
 
@@ -909,18 +909,18 @@ Non-atomic or complex variables are variables that represent data as a collectio
 
 These variables should include their type name while still considering their context.
 
-If a class owns an instance of a complex variable, i.e. if a `BP_PlayerCharacter` owns a `BP_Hat`, it should be stored as the variable type as without any name modifications.
+If a class owns an instance of a complex variable, i.e. if a `P_PlayerCharacter` owns a `B_Hat`, it should be stored as the variable type as without any name modifications.
 
 Example: Use `Hat`, `Flag`, and `Ability` **not** `MyHat`, `MyFlag`, and `PlayerAbility`.
 
 If a class does not own the value a complex variable represents, you should use a noun along with the variable type.
 
-Example: If a `BP_Turret` has the ability to target a `BP_PlayerCharacter`, it should store its target as `TargetPlayer` as when in the context of `BP_Turret` it should be clear that it is a reference to another complex variable type that it does not own.
+Example: If a `B_Turret` has the ability to target a `P_PlayerCharacter`, it should store its target as `TargetPlayer` as when in the context of `B_Turret` it should be clear that it is a reference to another complex variable type that it does not own.
 
 
 <a name="3.2.1.8"></a>
 <a name="bp-vars-naming-arrays"></a>
-##### 3.2.1.8 Arrays ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+##### 3.2.1.8 Arrays
 
 Arrays follow the same naming rules as above, but should be named as a plural noun.
 
@@ -929,7 +929,7 @@ Example: Use `Targets`, `Hats`, and `EnemyPlayers`, **not** `TargetList`, `HatAr
 
 <a name="3.2.2"></a>
 <a name="bp-vars-editable"></a>
-#### 3.2.2 Editable Variables ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
+#### 3.2.2 Editable Variables
 
 All variables that are safe to change the value of in order to configure behavior of a blueprint should be marked as `Editable`.
 
@@ -939,13 +939,13 @@ Do not arbitrarily mark variables as `Editable`.
 
 <a name="3.2.2.1"></a>
 <a name="bp-vars-editable-tooltips"></a>
-##### 3.2.2.1 Tooltips ![#](https://img.shields.io/badge/lint-supported-green.svg)
+##### 3.2.2.1 Tooltips
 
 All `Editable` variables, including those marked editable just so they can be marked as `Expose On Spawn`, should have a description in their `Tooltip` fields that explains how changing this value affects the behavior of the blueprint.
 
 <a name="3.2.2.2"></a>
 <a name="bp-vars-editable-ranges"></a>
-##### 3.2.2.2 Slider And Value Ranges ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+##### 3.2.2.2 Slider And Value Ranges
 
 All `Editable` variables should make use of slider and value ranges if there is ever a value that a variable should _not_ be set to.
 
@@ -957,7 +957,7 @@ A Value Range only needs to be defined if the bounds of a value are known. While
 
 <a name="3.2.3"></a>
 <a name="bp-vars-categories"></a>
-#### 3.2.3 Categories ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 3.2.3 Categories
 
 If a class has only a small number of variables, categories are not required.
 
@@ -981,7 +981,7 @@ Example: A weapon class set of variables might be organized as:
 
 <a name="3.2.4"></a>
 <a name="bp-vars-access"></a>
-#### 3.2.4 Variable Access Level ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.2.4 Variable Access Level
 
 In C++, variables have a concept of access level. Public means any code outside the class can access the variable. Protected means only the class and any child classes can access this variable internally. Private means only this class and no child classes can access this variable.
 
@@ -991,13 +991,13 @@ Treat `Editable` variables as public variables. Treat non-editable variables as 
 
 <a name="3.2.4.1"></a>
 <a name="bp-vars-access-private"></a>
-##### 3.2.4.1 Private Variables ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+##### 3.2.4.1 Private Variables
 
 Unless it is known that a variable should only be accessed within the class it is defined and never a child class, do not mark variables as private. Until variables are able to be marked `protected`, reserve private for when you absolutely know you want to restrict child class usage.
 
 <a name="3.2.5"></a>
 <a name="bp-vars-advanced"></a>
-#### 3.2.5 Advanced Display ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.2.5 Advanced Display
 
 If a variable should be editable but often untouched, mark it as `Advanced Display`. This makes the variable hidden unless the advanced display arrow is clicked.
 
@@ -1005,7 +1005,7 @@ To find the `Advanced Display` option, it is listed as an advanced displayed var
 
 <a name="3.2.6"></a>
 <a name="bp-vars-transient"></a>
-#### 3.2.6 Transient Variables ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.2.6 Transient Variables
 
 Transient variables are variables that do not need to have their value saved and loaded and have an initial value of zero or null. This is useful for references to other objects and actors who's value isn't known until run-time. This prevents the editor from ever saving a reference to it, and speeds up saving and loading of the blueprint class.
 
@@ -1013,19 +1013,19 @@ Because of this, all transient variables should always be initialized as zero or
 
 <a name="3.2.7"></a>
 <a name="bp-vars-config"></a>
-#### 3.2.8 Config Variables ![#](https://img.shields.io/badge/lint-supported-green.svg)
+#### 3.2.8 Config Variables
 
 Do not use the `Config Variable` flag. This makes it harder for designers to control blueprint behavior. Config variables should only be used in C++ for rarely changed variables. Think of them as `Advanced Advanced Display` variables.
 
 <a name="3.3"></a>
 <a name="bp-functions"></a>
-### 3.3 Functions, Events, and Event Dispatchers ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 3.3 Functions, Events, and Event Dispatchers
 
 This section describes how you should author functions, events, and event dispatchers. Everything that applies to functions also applies to events, unless otherwise noted.
 
 <a name="3.3.1"></a>
 <a name="bp-funcs-naming"></a>
-#### 3.3.1 Function Naming ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.3.1 Function Naming
 
 The naming of functions, events, and event dispatchers is critically important. Based on the name alone, certain assumptions can be made about functions. For example:
 
@@ -1039,7 +1039,7 @@ These questions and more can all be answered when functions are named appropriat
 
 <a name="3.3.1.1"></a>
 <a name="bp-funcs-naming-verbs"></a>
-#### 3.3.1.1 All Functions Should Be Verbs ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+#### 3.3.1.1 All Functions Should Be Verbs
 
 All functions and events perform some form of action, whether its getting info, calculating data, or causing something to explode. Therefore, all functions should all start with verbs. They should be worded in the present tense whenever possible. They should also have some context as to what they are doing.
 
