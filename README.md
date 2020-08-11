@@ -27,8 +27,7 @@ For example, if you want to send someone to the first principle of this style gu
 ### Appendices
 
 > A. [Important Terminology](#terms)
->
-> B. [Acknowledgements and Further Links](#acknowledgements-links)
+<br>B. [Acknowledgements and Further Links](#acknowledgements-links)
 
 ### Style Guide License
 > [License](#license)
