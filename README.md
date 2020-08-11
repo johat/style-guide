@@ -248,19 +248,22 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Texture (Mask)                      | T_         | _Mask      |                                                        |
 | Texture (Specular)                  | T_         | _S         |                                                        |
 | Texture (Metallic)                  | T_         | _M         |                                                        |
+| Texture (Linear Heightmap)          | T_         | _H         | Typically used for displacement mapping                |
+| Texture (Vector Heightmap)          | T_         | _V         | Typically used for displacement mapping                |
 | Texture (Packed)                    | T_         | _*         | See notes below about [packing](#anc-textures-packing) |
 | Texture Cube                        | TC_        |            |                                                        |
 | Media Texture                       | MT_        |            |                                                        |
 | Render Target                       | RT_        |            |                                                        |
 | Cube Render Target                  | RTC_       |            |                                                        |
 | Texture Light Profile               | TLP_       |            |                                                        |
+| Runtime Virtual Texture             | RVT_       |            |                                                        |
 
 <a name="anc-textures-packing"></a>
 <a name="1.2.6.1"></a>
 ##### 1.2.6.1 Texture Packing
 It is common practice to pack multiple layers of texture data into one texture. An example of this is packing Emissive, Roughness, Ambient Occlusion together as the Red, Green, and Blue channels of a texture respectively. To determine the suffix, simply stack the given suffix letters from above together, e.g. `_ERO`.
 
-> It is very common to include an Alpha/Opacity layer in your Diffuse/Albedo's alpha channel. As such, `A` should **not** be added to the `_D` suffix.
+> It is very common to include an Alpha/Opacity layer in your Diffuse/Albedo/Base Color's alpha channel. As such, `A` should **not** be added to the `_D` suffix.
 
 Packing 4 channels of data into a texture (RGBA) is not recommended except for an Alpha/Opacity mask in the Diffuse/Albedo's alpha channel, as a texture with an alpha channel incurs more overhead than one without.
 
@@ -312,7 +315,7 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Physical Material       | PM_        |            |                                  |
-| Physical Asset          | Phys_      |            |                                  |
+| Physics Asset           | Phys_      |            |                                  |
 | Destructible Mesh       | DM_        |            |                                  |
 
 <a name="anc-sounds"></a>
