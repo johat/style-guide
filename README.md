@@ -213,6 +213,8 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Structure (struct)          | F          |            | No underscore                    |
 | Pawn (or Character)         | P_         |            | Characters are Pawns             |
 | Widget Blueprint            | W_         |            | Many use WBP_ -- we use W_       |
+| Player Controller           | PC_        |            |                                  |
+| GameMode                    | GM_        |            |                                  |
 
 <a name="anc-materials"></a>
 <a name="1.2.5"></a>
@@ -385,6 +387,8 @@ These will likely be uncommon and often defined in code. However, should bluepri
 | Game Instance           | GI_        |            |                                  |
 | Game State              | GState_    |            |                                  |
 | Player State            | PState_    |            |                                  |
+| PlayerController        | PC_        |            |                                  |
+| GameMode                | GM_        |            |                                  |
 
 **[⬆ Back to Top](#table-of-contents)**
 
