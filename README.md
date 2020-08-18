@@ -87,13 +87,13 @@ Depending on how your asset variants are made, you can chain together variant na
 
 ##### 1.1e1 Bob
 
-| Asset Type              | Asset Name                                                 |
-| ----------------------- | ---------------------------------------------------------- |
-| Skeletal Mesh           | SK_Bob                                                     |
-| Material                | M_Bob                                                      |
-| Texture (Diffuse/Albedo)| T_Bob_D                                                    |
-| Texture (Normal)        | T_Bob_N                                                    |
-| Texture (Evil Diffuse)  | T_Bob_Evil_D                                               |
+| Asset Type                 | Asset Name                                                 |
+| -------------------------- | ---------------------------------------------------------- |
+| Skeletal Mesh              | SK_Bob                                                     |
+| Material                   | M_Bob                                                      |
+| Texture (Base Color/Albedo)| T_Bob_C                                                    |
+| Texture (Normal)           | T_Bob_N                                                    |
+| Texture (Evil Base Color)  | T_Bob_Evil_C                                               |
 
 ##### 1.1e2 Rock
 
@@ -239,7 +239,7 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Asset Type                          | Prefix     | Suffix     | Notes                                                  |
 | -----------------------             | ---------- | ---------- | --------------------------------                       |
 | Texture                             | T_         |            |                                                        |
-| Texture (Diffuse/Albedo/Base Color) | T_         | _D         |                                                        |
+| Texture (Base Color/Albedo)         | T_         | _C         | Many use _D for legacy reasons -- we don't             |
 | Texture (Normal)                    | T_         | _N         |                                                        |
 | Texture (Roughness)                 | T_         | _R         |                                                        |
 | Texture (Alpha/Opacity)             | T_         | _A         |                                                        |
@@ -264,9 +264,9 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 ##### 1.2.6.1 Texture Packing
 It is common practice to pack multiple layers of texture data into one texture. An example of this is packing Emissive, Roughness, Ambient Occlusion together as the Red, Green, and Blue channels of a texture respectively. To determine the suffix, simply stack the given suffix letters from above together, e.g. `_ERO`.
 
-> It is very common to include an Alpha/Opacity layer in your Diffuse/Albedo/Base Color's alpha channel. As such, `A` should **not** be added to the `_D` suffix.
+> It is very common to include an Alpha/Opacity layer in your Base Color/Albedo's alpha channel. As such, `A` should **not** be added to the `_C` suffix.
 
-Packing 4 channels of data into a texture (RGBA) is not recommended except for an Alpha/Opacity mask in the Diffuse/Albedo's alpha channel, as a texture with an alpha channel incurs more overhead than one without.
+Packing 4 channels of data into a texture (RGBA) is not recommended except for an Alpha/Opacity mask in the Base Color/Albedo's alpha channel, as a texture with an alpha channel incurs more overhead than one without.
 
 <a name="anc-misc"></a>
 <a name="1.2.7"></a>
