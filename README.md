@@ -1,11 +1,11 @@
-# Cupboard Games UE4 Style Guide() {
+# Cupboard Games Checkpoint UE4 Style Guide() {
 
 *A mostly reasonable approach to Unreal Engine 4*
 
 Forked from the original [UE4 style guide](https://github.com/Allar/ue4-style-guide) by [Gamemakin LLC](https://gamemak.in), which itself was heavily inspired by the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript). This version is modified for purpose by Cupboard Games.
 
 #### This Style Guide
-> This is our **general purpose** style guide. Please check the **[branches](https://github.com/johat/style-guide/branches/all)** in case there's a version relevant to the project you're working on. [Project-specific branches](https://github.com/johat/style-guide/branches/all) may have project-specific changes to this document.
+> This is our **CHECKPOINT** style guide. Please check the **[branches](https://github.com/johat/style-guide/branches/all)** in case there's a version relevant to the project you're working on. [Project-specific branches](https://github.com/johat/style-guide/branches/all) may have project-specific changes to this document.
 
 #### Linking To This Document
 
