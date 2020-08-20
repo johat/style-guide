@@ -229,7 +229,7 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Material Instance (Post Process) | PPI_       |            |                                  |
 | Material Parameter Collection    | MPC_       |            |                                  |
 | Subsurface Profile               | SSP_       |            |                                  |
-| Physical Materials               | PM_        |            |                                  |
+| Physical Material                | PM_        |            |                                  |
 | Decal                            | M_, MI_    | _Decal     |                                  |
 
 <a name="anc-textures"></a>
